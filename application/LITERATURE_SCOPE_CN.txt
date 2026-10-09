@@ -1,0 +1,19 @@
+最新核读状态：上传文献与应用补充，2026-10-08
+本段覆盖后续历史记录中这5篇的“候选/未核读”状态。历史记录保留作过程留痕，不能视作当前待办。
+阅读方式：核读与本稿命题直接相关的完整章节及相应公式页面；未声称逐篇所有附录、软件和全部实证表格均完成独立复现。页码均为上传PDF顺序页码。
+
+1. Baker SG, Cook NR, Vickers A, Kramer BS. 2009. DOI10.1111/j.1467-985X.2009.00592.x。
+文件nihms-108324.pdf，共24页。核读§7–10，PDF7–10页；9–10页公式另做图像核对。式(14)及(15)的RU用完美预测收益作分母；§10 testing threshold已有。本文S12比例不同，归属明确。附件内后段有附录，但本轮未完整复核A–G的全部推导。
+2. Marsh TL, Janes H, Pepe MS. 2020. DOI10.1111/biom.13190。
+文件nihms-1561755.pdf，共18页。核读PDF3–7页目标/假设/估计量、§2.3.3联合估计与置信带，及11–12页讨论限制；6–7页另做公式图像核对。研究重点是固定预先指定策略的独立验证；其sNB标准化方式需与本文未标准化NB区分。Web Appendix A–E为单独材料，未包含、未核读，代码未复现。
+3. Kerr KF, Marsh TL, Janes H. 2019. DOI10.1177/0272989X19849436。
+文件kerr-et-al-2019-the-importance-of-uncertainty-and-opt-in-v-opt-out-best-practices-for-decision-curve-analysis.pdf，共2页，正文两页核读。强调临床行动、阈值、默认策略与不确定性；不以显著性作为唯一决策要求。与主稿已有Vickers2023关于置信区间的讨论并列，不伪装成该领域无争议的新报告标准。
+4. Mishra A, McClelland RL, Inoue LYT, Kerr KF. 2022;42(4):500–512（2021在线）. DOI10.1177/0272989X211044697。
+文件mishra-et-al-2021-recalibration-methods-for-improved-clinical-utility-of-risk-scores.pdf，共13页。核读PDF3–4页校准与效用理论、7页仿真设计、10–12页实证/讨论与补充材料说明。临床阈值R与评分截点r不能混用；其理论有单调性等条件，不简化成无条件结论。Supplement A–C独立存在，未收到、未核读；加权/约束方法及软件未复现。本文保留该文已有引用并明确研究目标不同。
+5. Khan SS, Greenland P, Hayman LL, et al. 2026;153:e953–e970. DOI10.1161/CIR.0000000000001401。
+文件khan-et-al-2026-criteria-to-assess-the-predictive-and-clinical-utility-of-novel-models-biomarkers-and-tools-for-risk-of.pdf，共18页。核读首页研究范围及PDF8–9页actionability与成本等临床效用条件。用于界定应用边界，不用于宣称当前模型具有临床有效性，不照搬其CVD阈值。该文独立补充材料未核读。
+
+稿件落点：主稿方法/结果/讨论，主稿引用31–34；补充S12、表S6及引用32–35，Mishra沿用补充引用4。
+本轮新增4条实际引用，主稿与补充去重39条；篇数不等于创新程度或阅读深度。
+本轮二次分析与信息恢复核验均完成，不再把相关性实验或默认策略补充列为未完成。
+

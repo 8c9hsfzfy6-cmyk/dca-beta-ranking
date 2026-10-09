@@ -1,0 +1,52 @@
+Reconstruction changes and verification limits
+
+This release reconstructs a numerically validated implementation from retained
+project source files and uploaded result protocols. None of the final uploaded
+Kaggle metadata contains an authenticated hash of its executed inline source.
+
+SUPPORT
+- Kept the retained fitting, calibration, curve, and bootstrap algorithm.
+- Loaded the archived final flat protocol, mapping seed/bootstrap_seed/bootstrap_n
+  to the nested configuration used by the computational body; conflicts raise errors.
+- Restored the beta_tie diagnostic as abs(beta_delta) <= 1e-8. The older retained
+  code omitted this output column; the uploaded final results include it.
+- Used the archived SHA-checked raw CSV, without automatic network retrieval.
+- Moved output creation to the explicit execution guard.
+- The one refit was performed before adding the redundant beta_tie output column;
+  that column was then computed from the saved refit contrasts by the exact same
+  expression. No refit predictions or contrasts were changed. The SUPPORT refit metadata
+  script hash therefore identifies the executed pre-diagnostic-patch source; the
+  final script is identified separately by release_sha256.json.
+
+GUSTO
+- Removed automatic pip installation and automatic data download.
+- Used the archived SHA-checked R object and archived protocol; computational
+  parameters agree with the retained fitting and bootstrap body.
+- Moved fitting/output creation behind the main guard; import has no write side effects.
+- Unpenalized LR uses penalty=None as in the retained code; the tested newer
+  scikit-learn version emits a future deprecation warning, without changing results.
+
+FINITE SIMULATION
+- Retained the generator, Bayes conditional coupling, random stream subdivision,
+  formulas, thresholds, scenario order, and sample sizes.
+- Asserted consistency with archived 'repetitions' configuration; the older script
+  internally named the same value 'reps'.
+- Output creation occurs only on explicit full-design execution.
+- Verified all archived summary rates, population quantities, primary-threshold
+  quadrature, and rep=0 in each of nine strata. Full 1,800-dataset rerun was not done.
+
+POSTPROCESSING AND FIGURES
+- Retained postprocessing computations, changed the output path only.
+- Reconstructed its input ZIP interface from immutable archived files in a temporary
+  directory; compared all 668 output rows with archived outputs.
+- Portable figure/table-fragment script reuses the manuscript plotting code with
+  paths relative to this release. It uses archived results, not refitted replacements.
+
+AUTHENTICATION
+audit/input_sha256.json identifies input and retained-source files.
+audit/release_sha256.json identifies the final released files excluding itself.
+Hash equality establishes file integrity, not historical authorship or prior execution.
+
+The release is a private review deliverable, not a public versioned repository deposit.
+No clinical study, new random split, hyperparameter tuning, or scenario expansion
+was conducted during this release audit.

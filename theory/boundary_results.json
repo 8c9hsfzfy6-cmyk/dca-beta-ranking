@@ -1,0 +1,53 @@
+{
+  "scope": "Known population moments; exact calibration; t=mu; classical corollary, not new theory or a clinical experiment",
+  "pairs_checked": 24255,
+  "strict_classifications_checked": 24242,
+  "max_bound_identity_error": 1.2212453270876722e-15,
+  "max_boundary_witness_error": 6.106226635438361e-15,
+  "examples": [
+    {
+      "mu": 0.2,
+      "vA": 0.084501,
+      "vB": 0.087001,
+      "critical_vB": 0.1357434880041124,
+      "contrast_interval": [
+        -0.06563421251604318,
+        0.06092811000514051
+      ],
+      "B_guaranteed": false
+    },
+    {
+      "mu": 0.2,
+      "vA": 0.001,
+      "vB": 0.15,
+      "critical_vB": 0.015811388300841896,
+      "contrast_interval": [
+        -0.19611842105263155,
+        -0.1677357646239476
+      ],
+      "B_guaranteed": true
+    },
+    {
+      "mu": 0.5,
+      "vA": 0.01,
+      "vB": 0.04,
+      "critical_vB": 0.05,
+      "contrast_interval": [
+        -0.18,
+        0.020000000000000046
+      ],
+      "B_guaranteed": false
+    },
+    {
+      "mu": 0.5,
+      "vA": 0.01,
+      "vB": 0.06,
+      "critical_vB": 0.05,
+      "contrast_interval": [
+        -0.22494897427831778,
+        -0.01999999999999999
+      ],
+      "B_guaranteed": true
+    }
+  ]
+}

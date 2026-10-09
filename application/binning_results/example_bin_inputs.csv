@@ -1,0 +1,15 @@
+lo,hi,count,risk_sum,risk_square_sum,example,configuration
+0.0,0.2,0,0.0,0.0,interior_point,concentrated
+0.2,0.4,2,0.6,0.18,interior_point,concentrated
+0.4,1.0,0,0.0,0.0,interior_point,concentrated
+0.0,0.2,0,0.0,0.0,interior_point,spread
+0.2,0.4,2,0.6,0.1962,interior_point,spread
+0.4,1.0,0,0.0,0.0,interior_point,spread
+0.0,0.2,2,0.2,0.020000000000000004,edge_variance,concentrated
+0.2,0.4,0,0.0,0.0,edge_variance,concentrated
+0.4,0.8,2,1.2,0.72,edge_variance,concentrated
+0.8,1.0,0,0.0,0.0,edge_variance,concentrated
+0.0,0.2,2,0.2,0.020000000000000004,edge_variance,spread
+0.2,0.4,0,0.0,0.0,edge_variance,spread
+0.4,0.8,2,1.2,0.765,edge_variance,spread
+0.8,1.0,0,0.0,0.0,edge_variance,spread

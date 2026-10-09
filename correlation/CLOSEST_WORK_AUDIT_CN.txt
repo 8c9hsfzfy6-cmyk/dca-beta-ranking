@@ -1,0 +1,148 @@
+更新状态：正式相关性实验现已完成，见README.md、analysis/verification.json与修订稿S11。以下为实验前的理论与文献审查记录，其中“尚未运行”描述的是设计时状态。
+
+最接近工作核对与本轮相关性实验方案
+日期：2026-10-08
+定位：有限的方法审查／短文。本文档不代表新实验已完成，也不保证“首次”或期刊录用。
+
+一、已经核对的关键差异
+
+1. Hozo 等（2017）及 Hozo、Guyatt、Djulbegovic（2024）
+2017: Monte Carlo decision curve analysis using aggregate data.
+https://doi.org/10.1111/eci.12723
+核对位置：PDF 第3页（期刊p178）的 Monte Carlo simulation 和 comparison 小节、第7页（p182）Discussion。
+2024: Decision curve analysis based on summary data.
+https://doi.org/10.1111/jep.13945
+核对位置：2.3节、式(4)、2.4节、Discussion；上传的 MC_GDCA.ado。
+既有内容：使用预测风险的均值、SD匹配Beta分布，以阈值以上的风险和、1−风险和估计期望TP和FP。
+原作者提供了仿真和临床实例支持近似有效；不能改写成“他们证明了任意分布下排序必定保留”。
+2017文中已建议尽可能报告风险分布类型，并非完全没有讨论分布前提。
+本研究对象：两模型分别作这一个Beta替代后，在固定阈值是否把总体净获益排序反转。
+代码对应：.ado 117–123行匹配参数和生成Beta风险，148–162行计算标准DCA，188行对同模型重复平均。
+我们使用解析Beta积分，等于其默认标准DCA模拟量的期望，排除了额外的内层Monte Carlo噪声。
+这是目标量对应核对，非原生Stata逐位复现；不覆盖全部gDCA、治疗效应或非默认显示截断设置。
+程序202行还有跨模型总平均；该平均不能被当成模型排序。本研究比较每个模型曲线。
+SD是其软件的外部输入，不能宣称原作者采用了ddof=0。本研究明确采用ddof=0，并不把此约定归于原作者。
+差异应写为：审查这一具体近似的模型选择可靠性，而不是重新提出summary-data DCA。
+
+2. Pfeiffer 与 Gail（2020）
+Estimating the decision curve and its precision from three study designs.
+https://doi.org/10.1002/bimj.201800240
+核对材料：13页全文、Onlineappendix、Matlabcodev3；特别是正文3.2、3.3、4.1、4.3节及Table4code.m。
+既有内容：校准前提下只用风险的NB估计、结局型估计、影响函数及两模型配对差的方差；4.3节已经提出按Y分组，相关正态变量经Phi和条件Beta逆CDF生成两模型风险。
+关键纠正：本轮使用的条件Gaussian copula不是我们的创新，应直接引用4.3节。
+补充Table4code.m保留rho参数并设rho=0.0；其中betainv的参数为病例(a+1,b)、非病例(a,b+1)。这是已有可调依赖构造，不能因下载代码的默认值为0就宣称前人未考虑相关性。
+本研究差异：将既有联合生成原则用于已固定的非Beta混合反例，保持每个(S,Y)分布不变，评估两矩Beta替代的排序错误／选择损失，而不是重做他们的检验水平、功效或方差推导。
+明确限制：本轮未在原生Matlab执行作者全部程序，属于全文、公式及源码核对，不标成全面软件复现。
+
+3. Zhu、Zheng、Chan（2025）
+Weighted Brier Score—An Overall Summary Measure for Risk Prediction Models with Clinical Utility Consideration.
+https://doi.org/10.1007/s12561-025-09505-5
+勘误：https://doi.org/10.1007/s12561-025-09507-3
+核对位置：4.1.1节Set A，上传全文PDF第11–12页和Table1；勘误涉及Fig2和Table2，不替换Set A的Table1。
+既有内容：两个完全校准模型可有相同AUC和未加权Brier分数，但在t=.3有不同NB。
+已存的独立积分核对：两模型均值=.5，方差约.09305838155；NB约.32723933096和.38415960797。
+由校准恒等式 E[(Y−S)^2]=mu(1−mu)−Var(S)，可推得两矩相同；相应Beta曲线完全相同，无法区分这两个模型。
+这最后一步是我们对既有例子的推论，不应说原文专门研究了Hozo的Beta替代。
+现有独立复算还表明，对其中一个边际作1%混合扰动即可从Beta并列得到严格反向排序。因此“把并列改成严格反向”单独作为创新也不够强。
+差异应写为：针对具体Beta近似，组合提供可复现的平滑反例、参数路径及有限样本选择后果；不声称首次发现两矩或AUC/Brier不能决定临床效用。
+注意：该文BSw(1,1)是本文中普通Brier分数的一半，数值不能直接混用。
+
+4. Braouezec 与 Cagnol（2023，online 2022）
+A lattice approach to the Beta distribution induced by stochastic dominance: Theory and applications.
+https://doi.org/10.1080/01605682.2022.2096500
+核对位置：Theorem1，上传PDF第10页、期刊p1432。
+既有内容：固定均值的Beta分布按方差形成均值保持扩散／凸序关系。
+由于(s−t)+是凸函数，固定均值下Beta NB随方差排序，是既有定理的直接推论。
+不能作为本研究的新概率论定理。一般矩约束下凸函数期望界也不作为本研究创新。
+
+5. 另外两条必要的主张边界
+Sadatsafavi、Lee、Petkau，Identification of distributions for risks based on the first moment and c-statistic，arXiv2409.09178v2，2025-01-16。
+https://arxiv.org/html/2409.09178v2
+核对位置：Notation、Lemma及Proof。其识别结论要求预先指定的分布族满足连续严格单调CDF与quantile-identifiable条件；不是任意风险分布仅靠均值和c统计量就可识别。
+本研究的均值＋方差Beta替代不是其均值＋c统计量映射，也不推翻其族内识别结论。未运行mcmapper，不声称已比较该软件的表现。
+Sadatsafavi等2023，Value-of-Information Analysis for External Validation of Risk Prediction Models。
+https://doi.org/10.1177/0272989X231178317
+核对范围：正文目标、EVPI定义与决策不确定性的解释；没有复现其全部计算及软件。
+其评估不确定性造成的效用损失，已表明“用损失衡量模型选择后果”不是新概念。本研究是已知总体真值下、特定选择规则的重复抽样损失，不是观测验证数据上的EVPI估计。
+
+二、可支持的贡献表述（可用于主稿替换段落）
+
+Our contribution is a targeted audit of the two-moment beta approximation used in aggregate-data decision curve analysis. The risk-only net-benefit identity, paired comparison of decision curves, and conditional generation of calibrated correlated risks are established results. Earlier calibrated examples also show that common global performance summaries need not determine threshold-specific utility. We therefore do not claim a new general non-identification theorem. Instead, we examine whether this particular beta replacement preserves between-model net-benefit rankings, using reproducible smooth counterexamples, fixed-moment shape paths, and finite-sample model-selection loss. High-discrimination and low-endpoint-mass examples are separate constructions, rather than a single example satisfying both properties. The empirical applications delimit the scope of these results and do not establish clinically prevalent ranking reversals.
+
+相关性实验的Methods段落（设计已确定，正式结果尚未运行）：
+Following the conditional normal-quantile construction of Pfeiffer and Gail, we generate paired scores through a Gaussian copula within outcome strata. We extend the conditional margins from single beta distributions to the prespecified beta mixtures used in our counterexamples. This changes dependence while preserving each model's marginal score distribution and calibration in the population. The experiment evaluates changes in finite-sample wrong-ranking rates and expected selection loss; the population ranking is invariant by construction. Conditional copula parameters are distinguished from observed score correlations. Common random numbers permit paired comparisons with conditional independence.
+
+这两段是供稿件整合的文本；本轮没有把尚未运行的相关性结果写成主稿已完成结果。
+
+三、理论核对：为何只改相关性不会改校准
+
+设模型m的边际密度f_m在(0,1)上，均值均为mu。定义
+f_m(s|Y=1)=s f_m(s)/mu；f_m(s|Y=0)=(1−s) f_m(s)/(1−mu)。
+两者积分为1。先Y~Bernoulli(mu)，在每个Y层内指定任意有上述边际的联合分布。
+则P(S_m在ds,Y=1)=s f_m(s)ds，P(S_m在ds)=f_m(s)ds，因而P(Y=1|S_m=s)=s。
+改变条件copula不改变上述等式，故各模型风险分布、校准、AUC、Brier和总体NB均不变。
+Beta混合的条件分布仍为混合：病例分量参数(a+1,b)，权重正比w*a/(a+b)；非病例参数(a,b+1)，权重正比w*b/(a+b)。
+程序对这些条件CDF作数值反演；数学构造严格不变，数值实现的逼近误差另行审计，不把近似反演称为机器精度精确抽样。
+
+条件Gaussian copula：给定Y=y，Z_A,Z_0独立N(0,1)，
+Z_B=rho_y Z_A+sqrt(1−rho_y^2)Z_0，S_m=F^{-1}_{m,y}(Phi(Z_m))。
+rho_y是潜在正态相关系数，不是风险S的Pearson相关系数。
+条件独立rho0=rho1=0时仍有共享Y诱导的总体相关性：
+Cov(S_A,S_B)=v_A v_B/[mu(1−mu)]，Corr(S_A,S_B)=sqrt(v_A v_B)/[mu(1−mu)]。
+证明：E[S_m|Y=1]=mu+v_m/mu；E[S_m|Y=0]=mu−v_m/(1−mu)，再用全协方差公式。
+
+对风险型或结局型每人贡献h_A,h_B，估计差的方差为
+Var(h_A−h_B)/n=[Var(h_A)+Var(h_B)−2Cov(h_A,h_B)]/n。
+这解释相关性改变抽样波动，但不改变总体目标量。Beta插件估计是非线性的，不预设其错误率随相关性单调变化。
+若总体真差Delta>0而Beta差Delta_B<0，且患者独立同分布、均值方差位于合法内部，样本矩一致性与连续映射给出：
+Beta选择错误概率→1，期望选择损失→Delta；风险型与结局型经验估计错误概率→0、期望损失→0。
+对于真差为负而Beta差为正同理。该结论不依赖给定Y后的独立性。
+这是经典一致性原理在本问题的推论，不是声称超出经典结果的新定理。
+
+四、固定实验设计，不根据新结果换参数
+
+场景1 beta_control：mu=.2，模型A/B方差.008/.0088，精确Beta边际。
+场景2 low_endpoint：沿用shape场景3；mu=.2，方差.008/.0088，浓度50，形状参数.1/.5，混合比例.5。主阈值1/9，真差.00275946216，Beta差约−.0008864。
+场景3 high_auc：沿用原lambda=.5、浓度1000的构造。主阈值.2，真差.01639278，Beta差约−.002119。
+以上后两个场景分别支持低端点质量与高AUC；不要合并宣称同时具备两者。
+rho0/rho1七组：(-.5,-.5),(0,0),(.3,.3),(.6,.6),(.9,.9),(0,.9),(.9,0)。
+负相关为压力测试，后两组检查病例与非病例依赖不同；不宣称这些参数代表真实医院总体。
+n=500,3000,10000；每配置500次；共31,500套配对评估数据。同一(case,n,rep)跨rho共用Y和基础正态数，配置间不是独立的31,500次证据。
+采用既有阈值网格：前两场景5点（主阈值分别.2、1/9），第三场景6点（主阈值.2）。主阈值在运行前固定。
+四种估计：beta_estimated_mean、risk_only、outcome_based、beta_known_mean。known_mean是oracle敏感性对照，不是新可部署方法。
+每模型beta重建用该模型样本均值和ddof=0方差；known_mean用真实mu及同一经验方差。
+所有模型在独立评估样本上固定，不含训练或调参不确定性。
+
+主要报告：
+1) 实际总体、Y=0、Y=1 Pearson相关；条件独立的解析总体相关作为对照。
+2) 严格反向排序率、并列率及实际选择错误率。容差1e-10，并列选择A。
+3) loss=max(NB_A,NB_B)−NB_selected，针对两个固定模型、固定阈值，不是重新优化阈值。
+4) 每人NB损失乘1000用于可读性，不能解释成实际观察到的误诊／死亡人数。
+5) 率的Wilson Monte Carlo区间，损失MCSE及由选择错误率Wilson区间映射的损失区间；500次全部为0并不表示真实错误概率严格等于0。
+6) 与(0,0)的配对变化及MCSE。它们评估模拟精度，不是患者效应的临床置信区间；阈值扫描不作未经校正的显著性发现。
+7) 所有无效Beta拟合计入failed_reps，并列单独保留，不静默删掉失败后只报漂亮指标。
+
+五、如何解读运行结果，何时停止
+
+先查量化反演审计通过、失败数和边际诊断，然后查正确Beta对照，最后查两个既有反例。
+若相关性改变错误率而不改变总体反例：说明应区分模型替代偏差与配对抽样方差。
+若高相关时经验方法错误下降而Beta仍选错：支持该特定构造下近似偏差不能靠样本量或相关性修复；不推论所有临床模型。
+若Beta错误率明显降低：照实报告受依赖影响的有限样本表现，不能删除该配置；人口层面的反例仍由解析量决定。
+若变化小于Monte Carlo不确定性：报告证据不精确，不能写“证明无影响”。本轮不自动扩成大网格。
+若发现逆CDF审计失败、严重异常校准残差、较多非法拟合，应先修复实现或检查参数，不能直接写论文结果。
+当前Gaussian copula覆盖有限依赖结构，不排除其他copula、尾部相关、训练样本重叠等机制。
+
+六、材料需求与检索边界
+
+本轮需要的Hozo2017、Hozo2024及其ado、Pfeiffer–Gail全文与补充、Zhu2025及勘误、Beta凸序论文已经可访问并核对，不需要用户重复下载。
+本轮目标是已有最接近工作的全文对应，不是系统综述；定向网络检索没有提供可据此宣布“截至2026无人做过”的证据。
+未来若出现明确的“Beta两矩DCA模型排序失效／选择损失”论文，再做逐项比对。不能把检索不到当作不存在。
+经典凸函数期望上下界不纳入本轮新增理论，因此不再把获取某篇1977全文作为运行这次实验的前置条件。
+
+七、实施核验状态
+
+代码为独立Python脚本，numpy/pandas/scipy/matplotlib，Kaggle普通CPU即可，无外部数据、无训练、无网络下载。
+已完成12个条件逆CDF表的确定性数值审计；密集测试点上的最大CDF往返误差约3.38e-8，小于预设1e-7。
+已完成3次重复、n=500和10000的小规模实现核验：126套配对数据，四估计量输出无失败，总体差重现既有值，基准与自身配对变化为0，选择损失与选择错误率对应一致。
+这些小规模核验不能用于论文的错误率结论。正式500次实验尚未运行。
+正式运行后请提供DCA_correlation_full.zip，包含逐重复数组、配置、脚本、量化审计、总体量、汇总、配对差、诊断与图。

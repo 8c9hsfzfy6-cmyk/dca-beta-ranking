@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "population_cells": 16,
+  "summary_rows": 1344,
+  "fixture_threshold_cells": 28,
+  "max_beta_reconstruction_error": 2.0990154059319366e-16,
+  "max_summary_reconstruction_error": 1.3877787807814457e-16,
+  "scope": "Secondary deterministic analysis and algebra checks; no new random samples, model training, coverage evaluation, or clinical validation.",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "inputs": {
+    "correlation/results/population_truth.csv": "fa3dd37297979f8d8990d883d7a35f768ff73b8852c5d3604c65eadec342e438",
+    "correlation/results/summary.csv": "b93566a2866954ad4670a867dc5a81e26221f98e95ce11df26382bcd65ddd925"
+  }
+}

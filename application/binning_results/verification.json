@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "grid_cells": 160,
+  "edge_aligned_cells": 80,
+  "nested_refinement_comparisons": 120,
+  "edge_reconstruction_max_error": 2.775557561562883e-16,
+  "same_summary_example_pairs": 2,
+  "scope": "Deterministic algebra checks. No random simulation, patient data, coverage test, or new inferential theorem."
+}

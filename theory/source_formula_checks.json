@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "Deterministic Python translation and independent algebra; no native MATLAB execution",
+  "checks": [
+    {
+      "t": 0.1,
+      "max_algebra_error": 1.1102230246251565e-16,
+      "outcome_ge_minus_gt": 0.14285714285714285
+    },
+    {
+      "t": 0.2,
+      "max_algebra_error": 1.6653345369377348e-16,
+      "outcome_ge_minus_gt": 0.10714285714285715
+    },
+    {
+      "t": 0.4,
+      "max_algebra_error": 5.551115123125783e-17,
+      "outcome_ge_minus_gt": -0.09523809523809523
+    },
+    {
+      "t": 0.9,
+      "max_algebra_error": 4.440892098500626e-16,
+      "outcome_ge_minus_gt": 0.0
+    }
+  ],
+  "appendix_section3": {
+    "correct_contribution_variance": 0.15796875,
+    "literal_printed_variance": 0.049218750000000006,
+    "literal_influence_mean": -0.75
+  },
+  "appendix_case_control": {
+    "equation3": 0.04120000000000001,
+    "literal_equation4": 0.13493333333333335
+  },
+  "interpretation": "Printed-expression discrepancies do not invalidate the centered-contribution MATLAB routines or establish a new ranking result."
+}

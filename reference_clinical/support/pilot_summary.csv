@@ -1,0 +1,3 @@
+status,n_thresholds,shape_reversals,outcome_reversals,beta_ties,max_empirical_regret,max_proxy_regret,max_gap_at_shape_reversal,opposite_pointwise_signs
+raw,46,28,33,0,0.009505519453935095,0.004550093573170988,0.004550093573170988,0
+cal,46,0,1,0,0.0034120468903077114,0.0,0.0,0

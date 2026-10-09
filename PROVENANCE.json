@@ -1,0 +1,40 @@
+{
+  "release_date": "2026-10-08",
+  "original_shape_results_sha256": "e6b3fa31e9c034d14035a104cd9e37c5eddbf0bef1a82748282765cf5bcfa52a",
+  "modifications": [
+    "Portable figure paths",
+    "Shape audit records original archive hash as provenance; shipped files are checked by SHA256SUMS.json",
+    "Command runner separates bounded verification from optional full simulations and clinical refits"
+  ],
+  "third_party_patient_level_data_included": false,
+  "publication_status": "Unpublished submission preparation; not a public repository deposit",
+  "correlation_extension": {
+    "source_zip_sha256": "20d608469f25ea451ac548f72f1b8c09e778b10cae008c609a9fe19d204261d7",
+    "executed_script_sha256": "713a66c17450f17670b8f7288b4f4be001698b60401b1a0e6ebb936f6ac65d83",
+    "repetitions": 500,
+    "paired_datasets": 31500,
+    "audit": "Saved-array recalculation only; no simulation rerun"
+  },
+  "github_packaging_revision": {
+    "date": "2026-10-09",
+    "source_archive_sha256": "b932ba899f80bc6a3017d1e23e914e5f8d071cf020de82da0ca6bae4d7f01f9c",
+    "source_archive_file_count": 228,
+    "analysis_code_results_and_figures_changed": false,
+    "experiments_rerun": false,
+    "changes": [
+      "README.md",
+      "README_CN.txt",
+      "PROVENANCE.json",
+      "SHA256SUMS.json"
+    ],
+    "added": [
+      ".gitignore",
+      ".gitattributes",
+      "verify_manifest.py",
+      "UPLOAD_GITHUB_CN.txt",
+      "RELEASE_NOTES.md"
+    ],
+    "deposit_status": "Prepared locally; actual repository URL and visibility depend on user upload",
+    "verification_records": "Existing verification.json and analysis reports retained unchanged as historical records"
+  }
+}

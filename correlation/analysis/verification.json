@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "scope": "Recalculation from archived arrays only; no simulation replay",
+  "configurations": 63,
+  "paired_datasets": 31500,
+  "independent_base_repetitions": 4500,
+  "checked_summary_rows": 1344,
+  "checked_estimates": 672000,
+  "all_finite": true,
+  "max_absolute_discrepancies": {
+    "summary": 9.996344030316351e-17,
+    "paired": 9.980080997729068e-17,
+    "diagnostics": 1.1102230246251565e-16,
+    "population": 9.020562075079397e-17
+  },
+  "max_tested_inverse_cdf_error": 3.375416590678526e-08,
+  "executed_script_sha256": "713a66c17450f17670b8f7288b4f4be001698b60401b1a0e6ebb936f6ac65d83",
+  "environment": {
+    "version": "dca-copula-1.0",
+    "reps": 500,
+    "sizes": [
+      500,
+      3000,
+      10000
+    ],
+    "seed": 2026100829,
+    "rho_pairs": [
+      [
+        -0.5,
+        -0.5
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.3,
+        0.3
+      ],
+      [
+        0.6,
+        0.6
+      ],
+      [
+        0.9,
+        0.9
+      ],
+      [
+        0.0,
+        0.9
+      ],
+      [
+        0.9,
+        0.0
+      ]
+    ],
+    "methods": [
+      "beta_estimated_mean",
+      "risk_only",
+      "outcome_based",
+      "beta_known_mean"
+    ],
+    "tolerance": 1e-10,
+    "tie_rule": "choose A",
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "marginal_variance": "ddof=0",
+    "quantile_test_tolerance": 1e-07,
+    "source_sha256": "713a66c17450f17670b8f7288b4f4be001698b60401b1a0e6ebb936f6ac65d83",
+    "cases": [
+      {
+        "name": "beta_control",
+        "A": [
+          [
+            1.0
+          ],
+          [
+            3.8000000000000007
+          ],
+          [
+            15.200000000000003
+          ]
+        ],
+        "B": [
+          [
+            1.0
+          ],
+          [
+            3.436363636363637
+          ],
+          [
+            13.745454545454548
+          ]
+        ],
+        "thresholds": [
+          0.058823529411764705,
+          0.1111111111111111,
+          0.2,
+          0.3333333333333333,
+          0.5
+        ],
+        "primary": 0.2
+      },
+      {
+        "name": "low_endpoint",
+        "A": [
+          [
+            0.5,
+            0.09925960814364829,
+            0.4007403918563517
+          ],
+          [
+            3.8000000000000007,
+            2.9245164816045497,
+            11.75253040555623
+          ],
+          [
+            15.200000000000003,
+            47.07548351839545,
+            38.24746959444377
+          ]
+        ],
+        "B": [
+          [
+            0.5,
+            0.2793088448926003,
+            0.22069115510739967
+          ],
+          [
+            3.436363636363637,
+            6.622201673939518,
+            14.274973993737907
+          ],
+          [
+            13.745454545454548,
+            43.37779832606048,
+            35.7250260062621
+          ]
+        ],
+        "thresholds": [
+          0.058823529411764705,
+          0.1111111111111111,
+          0.2,
+          0.3333333333333333,
+          0.5
+        ],
+        "primary": 0.1111111111111111
+      },
+      {
+        "name": "high_auc",
+        "A": [
+          [
+            0.25,
+            0.25,
+            0.4003006012024048,
+            0.09969939879759519
+          ],
+          [
+            100.75283379360397,
+            299.247166206396,
+            1.0,
+            999.0
+          ],
+          [
+            899.247166206396,
+            700.7528337936039,
+            999.0,
+            1.0000000000000009
+          ]
+        ],
+        "B": [
+          [
+            0.052902421652421636,
+            0.43122685185185183,
+            0.015870726495726493,
+            0.4003006012024048,
+            0.09969939879759519
+          ],
+          [
+            20.0,
+            200.0,
+            800.0,
+            1.0,
+            999.0
+          ],
+          [
+            980.0,
+            800.0,
+            199.99999999999994,
+            999.0,
+            1.0000000000000009
+          ]
+        ],
+        "thresholds": [
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.4
+        ],
+        "primary": 0.2
+      }
+    ]
+  },
+  "inputs": {
+    "README.txt": "80bc2079465341df5f0a054fde767125b8de79295e0c106ebf3cfaf6d3ac295a",
+    "beta_control_n10000.npz": "027c294c3a922c058975bd5e77f1f7f16d590ba5c7bafcdfdd50481773707dcb",
+    "beta_control_n3000.npz": "557f7f76c8f5694ae1d9d7246b2984fc587fd83451d1f678216d6991f3822228",
+    "beta_control_n500.npz": "28257a2b2938d8daaff95c1641b96f8dbeddd4108c85cc58d74407f23f60fbe4",
+    "diagnostics.csv": "4383146710bf935aa1d2783190786af1a5bce98f30a78330a2382a1cf4cfb0c4",
+    "executed_script.py": "713a66c17450f17670b8f7288b4f4be001698b60401b1a0e6ebb936f6ac65d83",
+    "high_auc_n10000.npz": "84b6b796f498dd63d8e89b182b0f721093dc54a849c73b45cb3bd2b9a23175ad",
+    "high_auc_n3000.npz": "f5261cb60cb69f0d75a4261d2517b931cb6493a41f6154c70d4b218782fc1c46",
+    "high_auc_n500.npz": "7ec20f1c50c1113fb05a42fe9a741a15b2747e8f963ed43b32ef4d1982469ea7",
+    "low_endpoint_n10000.npz": "2b3e6e933c2e003a2199d4c2d053e7e71bdd03d73be773680cfcb034d503dec3",
+    "low_endpoint_n3000.npz": "c6c23714a2a976dd619a86aeaaf38955b4e2c2908f6d210202fd5003ce10dd7a",
+    "low_endpoint_n500.npz": "c546c44f9d47602a1d78d75460e07ecea3569b27ca821ba664508b31aa9ded9b",
+    "paired_changes.csv": "e8a33d6b1cf4867117309cfb2ab64a2cac18f600020d01092d51fbb0c273b561",
+    "population_truth.csv": "fa3dd37297979f8d8990d883d7a35f768ff73b8852c5d3604c65eadec342e438",
+    "primary_sensitivity.png": "a77a9ee8763f426e532a0f136dbdddbbec8d3b20d89f21630b478aa4b1838c43",
+    "primary_summary.csv": "c677b508c9bf42c428418fca45ccf22a867ee086ac1fdf203da8aa01afaf610c",
+    "quantile_audit.csv": "8f9cf076fab6c3a2057b3ea70b890c59edeb86c1e41b2bc47eb25325ea74600f",
+    "run_config.json": "bf86b1b5c02b5c1150540f19a903738d53d97e2ef0efb7de864cccdf1c8e84d4",
+    "script_sha256.txt": "9cc4aeacaaee906dbd3f95f66b2a98f880ab7ffb8a52156bb10065f918d21940",
+    "summary.csv": "b93566a2866954ad4670a867dc5a81e26221f98e95ce11df26382bcd65ddd925"
+  }
+}

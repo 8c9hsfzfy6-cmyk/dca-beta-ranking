@@ -1,0 +1,77 @@
+[
+  {
+    "name": "bimj2041-sup-0001-onlineappendix.pdf",
+    "bytes": 49794,
+    "sha256": "327d9275dd1c913ab423589876e7599be35d2ce22c89ec9c7f93f0c6c80aa5b8"
+  },
+  {
+    "name": "bimj2041-sup-0002-matlabcodev3.zip",
+    "bytes": 184139,
+    "sha256": "0dd66f4283ae69838d69190aac4fdd5e30789c100233a2ffcd7b4e7c51347311"
+  },
+  {
+    "name": "Biometrical J - 2019 - Pfeiffer - Estimating the decision curve and its precision from three study designs.pdf",
+    "bytes": 377579,
+    "sha256": "c4cc59f72049fbddef4b946d7d7fad49f0fc753d9c508b24e99f271651dcf7ef"
+  },
+  {
+    "name": "Eur J Clin Investigation - 2017 - Hozo - Monte Carlo decision curve analysis using aggregate data.pdf",
+    "bytes": 303521,
+    "sha256": "9e350c056db8f53265bd55f9c6866f4303f7b5568be067e901d82d821bc8cc4a"
+  },
+  {
+    "name": "NBinfsingledf.m",
+    "bytes": 183,
+    "sha256": "c99c29791fd403f5518e2e70ef2aca4b67eb3ce54a2570aa89fc2196672edf10"
+  },
+  {
+    "name": "NBinfRaloneempirical.m",
+    "bytes": 303,
+    "sha256": "3ac38958cf21d6614a92f3419ad0f867c282f8dd03e798e0f210263e6ecdcfd7"
+  },
+  {
+    "name": "NBinfRYempirical.m",
+    "bytes": 315,
+    "sha256": "9a80efe6218519022186f6eddf546f41666de9fa66e06188b2353da586eb810b"
+  },
+  {
+    "name": "exampledata.xlsx",
+    "bytes": 179455,
+    "sha256": "807c29ae758a569bb17bad286558b4ace1db60ebbceb0a28b21183c50b7ed3f9"
+  },
+  {
+    "name": "Figure1code.m",
+    "bytes": 1923,
+    "sha256": "0a62636452331533d7b971536cc1f28a3cdec30b40ddc210443a0a53be111d4f"
+  },
+  {
+    "name": "Figure2code.m",
+    "bytes": 2119,
+    "sha256": "84c657cc45c5e62b012de525319bf6937698685a7f7cd408eb27f5bb2bfe34a4"
+  },
+  {
+    "name": "table3code.m",
+    "bytes": 2290,
+    "sha256": "42956dda9f131eb713c27f44b5a4109ec312aaf61b6dfc05d3f0c67c026cac96"
+  },
+  {
+    "name": "ReadMe.txt",
+    "bytes": 1045,
+    "sha256": "f2d03f6713054eb0663b43b216034c1f11b92db377ec1330edd2224192c732d7"
+  },
+  {
+    "name": "Table4code.m",
+    "bytes": 3839,
+    "sha256": "b583297d806948eb9d5eb0bd87c8ffff60d160af34464f2096dd9293ca8b4184"
+  },
+  {
+    "name": "Table2code.m",
+    "bytes": 2902,
+    "sha256": "3d8a805623c40b9f79d6701a933566cad2df30d1ccf99231e0642ce395681d30"
+  },
+  {
+    "name": "AUC.m",
+    "bytes": 154,
+    "sha256": "106efa6a26cd1ff1a2c577e1356a8632b4619bd8d409325e23492a8f3e90016a"
+  }
+]

@@ -1,0 +1,21 @@
+Source documentation (checked 2026-10-08)
+SUPPORT2:
+https://archive.ics.uci.edu/dataset/880/support2
+https://hbiostat.org/data/
+The UCI entry directs licensing queries to the linked source. The HBiostat data page permits use, requests original-study citation and acknowledgment of the Vanderbilt University Department of Biostatistics. No separate CC-BY license for this dataset is asserted here.
+Download: https://archive.ics.uci.edu/static/public/880/data.csv
+SHA256: 9da794bbd5c3a6a816e677cc17535e58c122d9ef4cbefd404489330a9f9cd2de
+
+GUSTO:
+https://search.r-project.org/CRAN/refmans/predtools/html/gusto.html
+The package documentation describes anonymized trial data. Its brief provenance does not independently establish original consent arrangements or unrestricted redistribution rights.
+Download: https://raw.githubusercontent.com/resplab/predtools/master/data/gusto.rda
+SHA256: e12bc58730894fa26f31b5b4ea963a878e855d7f2d53e47991cf8bb80b84d8e1
+
+Patient-level datasets are excluded from this distributable. Users obtain them from the source and comply with applicable terms. Third-party articles and original-author software packages are excluded.
+No third-party dataset is relicensed by this archive. No blanket open-source/data license is asserted. This package supplies materials for review and reproduction; a public repository license can be selected by the rights holders before publication.
+
+Ethics sources:
+https://irb.sjtu.edu.cn/info/1038/1441.htm (Article 32 of the 2023 national rules)
+https://smdm.org/manuscript-requirements/
+Public access and anonymization are relevant to exemption eligibility, but this archive is not an institutional approval or consent-waiver certificate.

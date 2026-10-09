@@ -1,0 +1,81 @@
+{
+  "seed": 2026100845,
+  "bootstrap": 500,
+  "thresholds": [
+    0.01,
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.06,
+    0.07,
+    0.08,
+    0.09,
+    0.1,
+    0.11,
+    0.12,
+    0.13,
+    0.14,
+    0.15,
+    0.16,
+    0.17,
+    0.18,
+    0.19,
+    0.2,
+    0.21,
+    0.22,
+    0.23,
+    0.24,
+    0.25,
+    0.26,
+    0.27,
+    0.28,
+    0.29,
+    0.3
+  ],
+  "status": "Fixed exploratory analysis; not preregistered",
+  "data_url": "https://raw.githubusercontent.com/resplab/predtools/master/data/gusto.rda",
+  "data_sha256": "e12bc58730894fa26f31b5b4ea963a878e855d7f2d53e47991cf8bb80b84d8e1",
+  "outcome": "30-day mortality: day30",
+  "us_region_codes": [
+    1,
+    7,
+    9,
+    10,
+    11,
+    12,
+    14,
+    15
+  ],
+  "split": "All non-US development; US 50% calibration and 50% final evaluation",
+  "features": [
+    "age",
+    "pulse",
+    "min(sysbp,100)",
+    "Killip > I",
+    "pmi",
+    "miloc"
+  ],
+  "preprocessing": "Nonpositive pulse/sysbp treated as missing; median imputation fitted in development only",
+  "models": {
+    "LR": "Unpenalized logistic regression",
+    "HGB": {
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "learning_rate": 0.05,
+      "l2_regularization": 1.0,
+      "min_samples_leaf": 30,
+      "early_stopping": false
+    }
+  },
+  "calibration": "Logistic intercept/slope fitted on separate US calibration half",
+  "threshold_interpretation": "Exploratory mathematical grid, not clinically justified intervention thresholds",
+  "bootstrap_interpretation": "Paired evaluation patients; fitted models and calibration fixed. No training uncertainty or center-cluster inference.",
+  "joint_band": "Bootstrap max absolute error across both statuses, three paired estimands and all 30 thresholds",
+  "limitations": [
+    "Same historical trial, not a separate contemporary cohort",
+    "No known true population net benefit or clinical regret",
+    "No treatment-effect estimation",
+    "No tuning, seed search or filtering of negative results"
+  ]
+}

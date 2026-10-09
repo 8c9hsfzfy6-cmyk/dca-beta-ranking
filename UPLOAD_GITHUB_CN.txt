@@ -1,0 +1,41 @@
+GitHub 上传指南（2026-10-09 最终整理版）
+
+一、上传哪些文件
+解压 DCA_GitHub.zip，进入里面的 DCA_GitHub 文件夹。
+把该文件夹内的全部文件和子文件夹放到仓库最外层，保持相对目录不变。
+仓库首页应直接看到 README.md、run.py、requirements.txt、SHA256SUMS.json 和各分析文件夹。
+不要再套一层 DCA_GitHub 文件夹；不要只把 ZIP 当作唯一代码文件上传。
+不要上传论文投稿包、作者信息页、下载的别人论文或患者级数据。
+
+二、建议的上传方式
+本项目超过 200 个文件，建议使用 GitHub Desktop 或 Git 整体上传。
+例如：在 GitHub 建立一个空仓库，在 GitHub Desktop 中克隆到本机，
+将本包 DCA_GitHub 文件夹内的全部内容复制到该仓库目录，检查改动列表，提交并推送。
+创建空仓库时不额外生成 README、.gitignore 或许可证，避免与本包的文件冲突。
+如果仓库已经有文件，先检查差异，不要盲目覆盖已有研究文件。
+
+若坚持使用网页 Upload files：GitHub 当前每次最多上传 100 个文件，单文件不超过 25 MiB。
+本包的单文件均低于该大小限制，但不能把所有文件一次性拖入。
+可以分批上传；每批都必须保留正确的文件夹路径。
+dca_round_final/results/finite 内的文件超过 100 个，也要分批，不能当作一个小文件夹一次拖入。
+上传后检查目录和文件数量；不要把不同子目录里的文件摊平到根目录。
+官方说明：https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+
+三、数据和隐私
+初始发布包不含患者级数据，仅含合成模拟结果与公开队列的汇总结果。
+后续运行 fetch-data 或 clinical 会在本地下载数据／生成个体预测。
+.gitignore 会排除 core/inputs/support、core/inputs/gusto、core/verified_outputs、reruns 等本地产物。
+注意：网页手工上传不会因 .gitignore 自动拒绝文件，因此不要上传这些运行后目录。
+.gitattributes 保持文件原始字节，避免 Windows 换行转换导致完整性检查失败。
+
+四、公开状态和论文链接
+如果希望读者直接用链接访问，仓库需设为 Public；Private 普通链接不可供读者下载。
+个人账号和提交记录可能暴露作者身份；匿名评审仍可提供期刊复现 ZIP。
+仓库发布后，把真实仓库网址发回，用于更新论文的数据与代码可用性声明。
+本包没有虚构 GitHub 链接、DOI、发表状态或开放源代码许可证。
+上传成功后建议固定一个提交版本或 Release，记录其链接，避免论文对应版本随以后修改漂移。
+
+五、不做实验的核验
+在仓库根目录运行：python verify_manifest.py
+它只检查文件哈希，不下载数据、不生成患者、不拟合模型、不写结果。
+完整分析核验命令见 README.md；你现在为上传仓库不需要再运行大实验。

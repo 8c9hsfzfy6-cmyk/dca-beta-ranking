@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "scope": "Archived simulation summaries, numerical identities, 9 original and 114 shape first-replicate replays; no clinical refitting or full simulation",
+  "integrity_files": 144,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0"
+  },
+  "original": {
+    "source_semantics": {
+      "vector_identity_error": 2.7755575615628914e-17,
+      "includes_exact_threshold_ties": true,
+      "native_stata_executed": false,
+      "scope": "Standard single-model untruncated formula only; not generalized DCA, graphical defaults, or multi-model averaging"
+    },
+    "finite": {
+      "rows": 10800,
+      "summary_max_error": 1.1102230246251565e-16,
+      "population_max_error": 1.1102230246251565e-16,
+      "independent_integration_max_error": 5.384581669432009e-15,
+      "diagnostic_replayed_datasets": 9,
+      "diagnostic_replay_max_error": 1.1275702593849246e-16,
+      "full_1800_dataset_simulation_rerun": false
+    }
+  },
+  "shape": {
+    "configurations": 114,
+    "repetitions_per_configuration": 500,
+    "replicates": 57000,
+    "raw_scalar_estimates": 1140000,
+    "summary_rows": 2280,
+    "failed_estimates": 0,
+    "max_summary_errors": {
+      "bias": 9.974659986866641e-17,
+      "bias_mcse": 9.993633524885137e-17,
+      "rmse": 9.985502008591496e-17,
+      "strict_wrong_rate": 0,
+      "wrong_wilson_low": 1.1102230246251565e-16,
+      "wrong_wilson_high": 1.1102230246251565e-16,
+      "tie_rate": 0,
+      "mean_regret": 9.974659986866641e-17,
+      "regret_mcse": 9.719872476332547e-17
+    },
+    "max_truth_error": 0.0,
+    "max_first_replicate_replay_error": 1.0408340855860843e-16,
+    "first_replicates_replayed": 114,
+    "sha256_input": "e6b3fa31e9c034d14035a104cd9e37c5eddbf0bef1a82748282765cf5bcfa52a"
+  },
+  "independent_shape_integration": {
+    "independent_nb_integrals": 64,
+    "max_nb_discrepancy": 2.4424906541753444e-15,
+    "max_auc_grid_discrepancy": 2.3754874567405437e-07,
+    "illustrative_example": {
+      "scenario_id": 657,
+      "mu": 0.2,
+      "vA": 0.008,
+      "vB": 0.0088,
+      "vA_fraction": 0.05,
+      "variance_ratio": 1.1,
+      "kappa": 50.0,
+      "shapeA": 0.1,
+      "shapeB": 0.5,
+      "epsilon": 0.5,
+      "threshold": 0.1111111111111111,
+      "odds_multiplier": 0.5,
+      "beta_delta": -0.0008863961521738,
+      "true_delta": 0.0027594621597691,
+      "reversal": true,
+      "loss_selecting_beta": 0.0027594621597691,
+      "critical_epsilon": 0.1215620680143037,
+      "AUC_A": 0.6579915324927065,
+      "AUC_B": 0.6654994588889998,
+      "endpoint_mass_A": 0.0015412490330286,
+      "endpoint_mass_B": 6.224025640610975e-05,
+      "cdf_distance_A": 0.0587764669474683,
+      "cdf_distance_B": 0.0230911172170801
+    }
+  },
+  "figure_generation": "Both main figures generated successfully",
+  "clinical_refits_this_revision": false
+}

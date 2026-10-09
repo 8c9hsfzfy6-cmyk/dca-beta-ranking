@@ -1,0 +1,37 @@
+{
+  "repetitions": 200,
+  "sample_sizes": [
+    500,
+    3000,
+    10000
+  ],
+  "thresholds": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4
+  ],
+  "primary_threshold": 0.2,
+  "seed": 2026100844,
+  "cases": [
+    "beta_control",
+    "mixture_025",
+    "mixture_050"
+  ],
+  "prevalence": 0.2,
+  "status": "Exploratory finite-sample supplement to an existing counterexample",
+  "calibration": "Exact population calibration by shared-outcome Bayes construction",
+  "dependence": "Scores conditionally independent given Y; one chosen joint law",
+  "variance_ddof": 0,
+  "inference": "Pointwise paired Wald interval for empirical NB difference",
+  "limits": [
+    "Artificial populations, not clinical failure frequencies.",
+    "No Stata execution.",
+    "Analytic expectation of standard Beta reconstruction.",
+    "No novel estimator or novelty guarantee.",
+    "Monte Carlo rate intervals apply to this fixed simulation.",
+    "Known-mean analysis is an oracle diagnostic only."
+  ]
+}
