@@ -1,0 +1,68 @@
+{
+  "scope": "Exploratory grid; fractions are not clinical error prevalence; all scores exactly calibrated by common-outcome construction",
+  "scenarios": 1944,
+  "threshold_cells": 9720,
+  "max_moment_or_linearity_error": 1.4432763794855474e-16,
+  "reversal_cells": 1464,
+  "low_endpoint_cells": 3455,
+  "low_endpoint_reversal_cells": 537,
+  "by_epsilon": [
+    {
+      "epsilon": 0.0,
+      "sum": 0,
+      "size": 1620
+    },
+    {
+      "epsilon": 0.1,
+      "sum": 94,
+      "size": 1620
+    },
+    {
+      "epsilon": 0.25,
+      "sum": 207,
+      "size": 1620
+    },
+    {
+      "epsilon": 0.5,
+      "sum": 329,
+      "size": 1620
+    },
+    {
+      "epsilon": 0.75,
+      "sum": 387,
+      "size": 1620
+    },
+    {
+      "epsilon": 1.0,
+      "sum": 447,
+      "size": 1620
+    }
+  ],
+  "largest_loss_low_endpoint": [
+    {
+      "scenario_id": 1823,
+      "mu": 0.5,
+      "vA": 0.1,
+      "vB": 0.11000000000000001,
+      "vA_fraction": 0.4,
+      "variance_ratio": 1.1,
+      "kappa": 200.0,
+      "shapeA": 0.9,
+      "shapeB": 0.1,
+      "epsilon": 1.0,
+      "threshold": 0.8,
+      "odds_multiplier": 4.0,
+      "beta_delta": -0.022654816598323135,
+      "true_delta": 0.2474923281466585,
+      "reversal": true,
+      "loss_selecting_beta": 0.2474923281466585,
+      "critical_epsilon": 0.08386102551522148,
+      "AUC_A": 0.8136457034142008,
+      "AUC_B": 0.8309083188413233,
+      "endpoint_mass_A": 2.1783548791454166e-05,
+      "endpoint_mass_B": 0.00014153952926720947,
+      "cdf_distance_A": 0.2875205149628674,
+      "cdf_distance_B": 0.2754055035966003
+    }
+  ]
+}
